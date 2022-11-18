@@ -1,7 +1,7 @@
 # password-generator-shannon
 Create an application that generates a random password based on the criteria(s) selected
 
-<!-- # Module 5 Challenge: Password Generator
+# Module 5 Challenge: Password Generator
 
 ## Overview
 
@@ -79,4 +79,4 @@ You are required to submit the following for review:
 
 ---
 
-© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved. -->
+© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
