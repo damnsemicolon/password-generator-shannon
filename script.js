@@ -126,12 +126,11 @@ while(pwLength < 10 || pwLength > 64) {
   // Confirm for Lowercase
   var pwLowerCase = confirm("Does your password needs lowercase characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
-
   // Confirm for Uppercase
   var pwUpperCase = confirm("Does your password needs UPPERCASE characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
   // Confirm for Numeric
-  var pwNumeric = confirm("Does your password needs numbers?\n[OK] = Yes please.\n[Cancel] = No thanks.");
+  var pwNumeric = confirm("Does your password needs numeric characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
   // Confirm for Special Characters
   var pwSpecial = confirm("Does your password needs special characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
@@ -141,34 +140,51 @@ while(pwLength < 10 || pwLength > 64) {
     alert("Your password must need at least one criteria from below:\nLowercase Characters\nUppercase Characters\nNumeric Characters\nSpecial Characters");
     var pwLowerCase = confirm("Does your password needs lowercase characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwUpperCase = confirm("Does your password needs UPPERCASE characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
-    var pwNumeric = confirm("Does your password needs numbers?\n[OK] = Yes please.\n[Cancel] = No thanks.");
+    var pwNumeric = confirm("Does your password needs numeric characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwSpecial = confirm("Does your password needs special characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
   }
-
-// console.log(boolean(pwLowerCase));
-
-
+}
 
 // Function for getting a random element from an array
-// function getRandom(arr) {
+function getRandom(arr) {
+  if (pwLowerCase) {
+    arr = arr.concat(lowerCasedCharacters)
+  }
 
-// }
+  if (pwUpperCase) {
+    arr = arr.concat(upperCasedCharacters)
+  }
+
+  if (pwNumeric) {
+    arr = arr.concat(numericCharacters)
+  }
+
+  if (pwSpecial) {
+    arr = arr.concat(specialCharacters)
+  }
+}
 
 // Function to generate password with user input
-// function generatePassword() {
+function generatePassword() {
+  var newPassword = "";
 
-// }
+  for (var i = 0; i < pwLength; i++) {
+    newPassword = newPassword + arr[Math.floor(Math.random() * arr.length)];
+    console.log(newPassword);
+  }
+  return newPassword;
+}
 
 // Get references to the #generate element
-// var generateBtn = document.querySelector('#generate');
+var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
-// function writePassword() {
-//   var password = generatePassword();
-//   var passwordText = document.querySelector('#password');
+function writePassword() {
+  var password = generatePassword();
+  var passwordText = document.querySelector('#password');
 
-//   passwordText.value = password;
-
+  passwordText.value = password;
+}
 
 // Add event listener to generate button
-// generateBtn.addEventListener('click', writePassword);
+generateBtn.addEventListener('click', writePassword);
