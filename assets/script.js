@@ -99,23 +99,16 @@ var upperCasedCharacters = [
   'Z'
 ];
 
-//set up
-var pwLength = 0;
-var pwLowerCase = 0;
-var pwUpperCase = 0;
-var pwNumeric = 0;
-var pwSpecial = 0;
-var newPassword = "";
-
 // Function to prompt user for password options
 function getPasswordOptions() {
 
   // Prompt for Length of Password 
-  var pwLength = parseInt((prompt("Please enter the length of password:\nBetween 10 and 64")));
+  var pwLength = (prompt("Please enter the length of password:\nBetween 10 and 64"));
 
-  while (pwLength < 10 || pwLength > 64) {
+  //In case input number is smaller than 10 OR larger than 64 OR user clicked "Cancel" OR input is not numbers 
+  while ((!(pwLength > 9)) || (!(pwLength < 65))) {
     alert("The password length must be at least 10 characters but no more than 64 characters.");
-    var pwLength = parseInt((prompt("Please reenter the length of your password:\nBetween 10 and 64")));
+    var pwLength = (prompt("Please reenter the length of your password:\nBetween 10 and 64"));
   }
 
   // Confirm for Lowercase Characters
@@ -156,6 +149,8 @@ function getPasswordOptions() {
   if (pwSpecial) {
     pwContent = pwContent.concat(specialCharacters)
   }
+
+  var newPassword = "";
 
   for (var i = 0; i < pwLength; i++) {
     newPassword = newPassword + pwContent[Math.floor(Math.random() * pwContent.length)];
