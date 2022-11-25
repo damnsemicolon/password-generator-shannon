@@ -143,33 +143,36 @@ while(pwLength < 10 || pwLength > 64) {
     var pwNumeric = confirm("Does your password needs numeric characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwSpecial = confirm("Does your password needs special characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
   }
-}
+// }
 
-// Function for getting a random element from an array
-function getRandom(arr) {
+// // Function for getting a random element from an array
+// function getRandom(arr) {
+
+  var pwContent = [];
+
   if (pwLowerCase) {
-    arr = arr.concat(lowerCasedCharacters)
+    pwContent = pwContent.concat(lowerCasedCharacters)
   }
 
   if (pwUpperCase) {
-    arr = arr.concat(upperCasedCharacters)
+    pwContent = pwContent.concat(upperCasedCharacters)
   }
 
   if (pwNumeric) {
-    arr = arr.concat(numericCharacters)
+    pwContent = pwContent.concat(numericCharacters)
   }
 
   if (pwSpecial) {
-    arr = arr.concat(specialCharacters)
+    pwContent = pwContent.concat(specialCharacters)
   }
-}
+// }
 
-// Function to generate password with user input
-function generatePassword() {
+// // Function to generate password with user input
+// function generatePassword() {
   var newPassword = "";
 
   for (var i = 0; i < pwLength; i++) {
-    newPassword = newPassword + arr[Math.floor(Math.random() * arr.length)];
+    newPassword = newPassword + pwContent[Math.floor(Math.random() * pwContent.length)];
     console.log(newPassword);
   }
   return newPassword;
@@ -180,7 +183,7 @@ var generateBtn = document.querySelector('#generate');
 
 // Write password to the #password input
 function writePassword() {
-  var password = generatePassword();
+  var password = getPasswordOptions();
   var passwordText = document.querySelector('#password');
 
   passwordText.value = password;
