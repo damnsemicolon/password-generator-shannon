@@ -1,82 +1,43 @@
-# password-generator-shannon
-Create an application that generates a random password based on the criteria(s) selected
+# Week-5 Challenge - Password Generator
 
-# Module 5 Challenge: Password Generator
+## Description
 
-## Overview
+As a review of the materials we learnt in our five week, our **Week 5 Challenge** will test our skills in intermediate JavaScript and logic by having us generate passwords with selected criteria by writing javascript codes.
 
-This week’s challenge requires you to create an application that an employee can use to generate a random password based on criteria they’ve selected by modifying starter code. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean and polished user interface that is responsive, ensuring that it adapts to multiple screen sizes.
+In this web application, I have applied the following skills:
 
-The password can include special characters. If you’re unfamiliar with these, see this [list of Password Special Characters from the OWASP Foundation](https://www.owasp.org/index.php/Password_special_characters).
+>01. JavaScript
+>02. Google-fu
+>03. Google-fu
+>04. Google-fu
+>05. Lots of tears
+>06. Google-fu
 
-## Instructions
+## Installation
 
-The following image shows the web application's appearance and functionality:
+N/A
 
-![password generator demo](./assets/05-javascript-challenge-demo.png)
+## Usage 
 
+Click the big red "Generate Password" button to start the password helper. 
 
-* Generate a password when the button is clicked
-  * Present a series of prompts for password criteria
-    * Length of password
-      * At least 10 characters but no more than 64.
-    * Character types
-      * Lowercase
-      * Uppercase
-      * Numeric
-      * Special characters ($@%&*, etc)
-  * Code should validate for each input and at least one character type should be selected
-  * Once prompts are answered then the password should be generated and displayed in an alert or written to the page
+Password Generator Website:
+https://damnsemicolon.github.io/password-generator-shannon
 
-## Grading Requirements
+Screenshot of deployed website:
+![screenshots](assets/screenshot.jpg)
 
-This challenge is graded based on the following criteria: 
+## Credits
 
-### Technical Acceptance Criteria: 40%
+Philip Howley (Instructor)<br>
+Nic Catania (TA)<br>
+Pod-4 mates<br>
+Myself
 
-* Satisfies all of the above acceptance criteria plus the following:
+## License
 
-  * The challenge should not produce any errors in the console when you inspect it using Chrome DevTools.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-### Deployment: 32%
+## Badges
 
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
-
-
-## Review
-
-You are required to submit the following for review:
-
-* The URL of the deployed application.
-
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
-
----
-
-© 2022 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+![confused](https://img.shields.io/badge/status-confused-navy)
