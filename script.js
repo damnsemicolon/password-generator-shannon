@@ -27,15 +27,15 @@ var specialCharacters = [
 
 // Array of numeric characters to be included in password
 var numericCharacters = [
-  '0', 
-  '1', 
-  '2', 
-  '3', 
-  '4', 
-  '5', 
-  '6', 
-  '7', 
-  '8', 
+  '0',
+  '1',
+  '2',
+  '3',
+  '4',
+  '5',
+  '6',
+  '7',
+  '8',
   '9'
 ];
 
@@ -105,48 +105,39 @@ var pwLowerCase = 0;
 var pwUpperCase = 0;
 var pwNumeric = 0;
 var pwSpecial = 0;
-// var userchoices = {
-//   pwLowerCase: lowerCasedCharacters,
-//   pwUpperCase: upperCasedCharacters,
-//   pwNumeric: numericCharacters,
-//   pwSpecial: specialCharacters
-// }
+var newPassword = "";
 
 // Function to prompt user for password options
 function getPasswordOptions() {
 
   // Prompt for Length of Password 
-  var pwLength = (prompt("Please enter the length of password:\nBetween 10 and 64"));
+  var pwLength = parseInt((prompt("Please enter the length of password:\nBetween 10 and 64")));
 
-while(pwLength < 10 || pwLength > 64) {
+  while (pwLength < 10 || pwLength > 64) {
     alert("The password length must be at least 10 characters but no more than 64 characters.");
-    var pwLength = (prompt("Please reenter the length of your password:\nBetween 10 and 64"));
-}
+    var pwLength = parseInt((prompt("Please reenter the length of your password:\nBetween 10 and 64")));
+  }
 
-  // Confirm for Lowercase
+  // Confirm for Lowercase Characters
   var pwLowerCase = confirm("Does your password needs lowercase characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
-  // Confirm for Uppercase
+  // Confirm for Uppercase Characters
   var pwUpperCase = confirm("Does your password needs UPPERCASE characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
-  // Confirm for Numeric
+  // Confirm for Numeric Characters
   var pwNumeric = confirm("Does your password needs numeric characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
   // Confirm for Special Characters
   var pwSpecial = confirm("Does your password needs special characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
 
-  // In case user clicks Cancell for all
-  while(pwLowerCase === false && pwUpperCase === false && pwNumeric === false && pwSpecial === false) {
+  // In case user clicks Cancel for all
+  while (pwLowerCase === false && pwUpperCase === false && pwNumeric === false && pwSpecial === false) {
     alert("Your password must need at least one criteria from below:\nLowercase Characters\nUppercase Characters\nNumeric Characters\nSpecial Characters");
     var pwLowerCase = confirm("Does your password needs lowercase characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwUpperCase = confirm("Does your password needs UPPERCASE characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwNumeric = confirm("Does your password needs numeric characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
     var pwSpecial = confirm("Does your password needs special characters?\n[OK] = Yes please.\n[Cancel] = No thanks.");
   }
-// }
-
-// // Function for getting a random element from an array
-// function getRandom(arr) {
 
   var pwContent = [];
 
@@ -165,15 +156,9 @@ while(pwLength < 10 || pwLength > 64) {
   if (pwSpecial) {
     pwContent = pwContent.concat(specialCharacters)
   }
-// }
-
-// // Function to generate password with user input
-// function generatePassword() {
-  var newPassword = "";
 
   for (var i = 0; i < pwLength; i++) {
     newPassword = newPassword + pwContent[Math.floor(Math.random() * pwContent.length)];
-    console.log(newPassword);
   }
   return newPassword;
 }
